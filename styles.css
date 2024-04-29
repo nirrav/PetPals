@@ -1,4 +1,6 @@
 /* Custom CSS */
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=IBM+Plex+Serif:ital,wght@1,600&display=swap');
+
 /*--------------------PRELOADER STYLES--------------------*/
 
 .preloader {
@@ -141,12 +143,20 @@
 .carousel-item img {
   width: 100%;
   height: auto;
+  aspect-ratio: 6/4;
   border-radius: 16px;
 }
 
-.container {
-  margin-top: 3vh;
+.intro {
+  background: linear-gradient(to right, #4e4e4e, #ffffff);
+  /* Gradient from grey to white */
+  padding: 30px;
+  /* Optional: Add padding to create some space around the content */
 }
+
+
+
+
 
 .introNote {
   padding: 0 15px;
@@ -155,6 +165,7 @@
 
 .introNote p {
   font-size: 1.6em;
+  font-family: cursive;
   /* Default font size */
 }
 
@@ -164,5 +175,46 @@
     font-size: 16px;
     /* Adjust font size for smaller screens */
   }
+
+  .intro {
+    background: linear-gradient(to bottom, #808080, #ffffff);
+    /* Gradient from grey to white */
+
+  }
 }
 
+/* Cards Section */
+.cards-section {
+  padding: 50px 0;
+}
+
+.card {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Align content in the center horizontally */
+  text-align: center; /* Align text in the center */
+  border-radius: 16px; /* Add border radius */
+  border: 1px solid #ccc; /* Add border for better visibility */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+}
+
+.card-title {
+  font-size: 24px;
+  margin-top: 20px; /* Adjust top margin */
+}
+
+.card-text {
+  font-size: 18px;
+  margin-bottom: 20px; /* Adjust bottom margin */
+}
+
+.btn {
+  margin-bottom: 20px; /* Adjust bottom margin */
+}
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
