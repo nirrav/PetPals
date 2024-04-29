@@ -22,14 +22,23 @@ window.onload = function () {
   preloader.classList.add('fade-out');
 };
 
+// Toggle dropdown menu when dropdown toggle button is clicked
+document.querySelector('#hoverDropdown .dropdown-toggle').addEventListener('click', function (e) {
+  e.preventDefault(); // Prevent default link behavior
+  var dropdownMenu = document.querySelector('#hoverDropdown .dropdown-menu');
+  dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+});
+
 // Close dropdown menu when clicking outside of it
-document.addEventListener("click", function (e) {
-  if (!e.target.closest("#hoverDropdown")) {
-    document.querySelector("#hoverDropdown .dropdown-menu").style.display = "none";
+document.addEventListener('click', function (e) {
+  var dropdownMenu = document.querySelector('#hoverDropdown .dropdown-menu');
+  if (!e.target.closest('#hoverDropdown') && dropdownMenu.style.display === 'block') {
+    dropdownMenu.style.display = 'none';
   }
 });
 
 // Prevent dropdown menu from closing when clicking on it
-document.querySelector("#hoverDropdown .dropdown-menu").addEventListener("click", function (e) {
+document.querySelector('#hoverDropdown .dropdown-menu').addEventListener('click', function (e) {
   e.stopPropagation();
 });
+
