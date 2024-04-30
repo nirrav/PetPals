@@ -1,7 +1,26 @@
 /* Custom CSS */
-@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=IBM+Plex+Serif:ital,wght@1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lugrasimo&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lugrasimo&family=Pacifico&family=Questrial&display=swap');
+
+.pacifico-regular {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.questrial-regular {
+  font-family: "Questrial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
 /*--------------------PRELOADER STYLES--------------------*/
+body {
+  background-color: bisque;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
 
 .preloader {
   background: linear-gradient(to right, #000000, #3b3b3b);
@@ -38,7 +57,7 @@
 }
 
 .pet-card {
-  background: linear-gradient(to bottom, #f3f3f3, #ffffff);
+  background: url(media/petCardBg.jpeg);
   border: 1px solid #dcdcdc;
   border-radius: 12px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -58,9 +77,10 @@
   margin-bottom: 10px;
 }
 
-.pet-card h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
+.pet-card h1 {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .pet-card p {
@@ -69,7 +89,7 @@
 }
 
 .pet-profile {
-  background: linear-gradient(to bottom, #ffffff, #f3f3f3);
+  background: url(media/petCardBg.jpeg);
   border: 1px solid #dcdcdc;
   border-radius: 12px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -85,9 +105,11 @@
 }
 
 .pet-profile h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-family: "Pacifico", cursive;
+  font-weight: 500;
+  font-style: normal;
 }
+
 
 .pet-profile p {
   margin-bottom: 5px;
@@ -148,7 +170,7 @@
 }
 
 .intro {
-  background: linear-gradient(to right, #4e4e4e, #ffffff);
+  background: linear-gradient(to right, #b2b2b2, #ffffff);
   /* Gradient from grey to white */
   padding: 30px;
   /* Optional: Add padding to create some space around the content */
@@ -164,24 +186,33 @@
 }
 
 .introNote p {
-  font-size: 1.6em;
-  font-family: cursive;
-  /* Default font size */
+  font-family: "Questrial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .introNote p {
-    font-size: 16px;
-    /* Adjust font size for smaller screens */
+    font-size: 1.8em;
+    /* Font size for larger screens */
   }
+}
+
+@media (max-width: 767px) {
+  .introNote p {
+    font-size: 1.5em;
+    /* Font size for smaller screens */
+  }
+}
+
 
   .intro {
     background: linear-gradient(to bottom, #808080, #ffffff);
     /* Gradient from grey to white */
 
   }
-}
+
 
 /* Cards Section */
 .cards-section {
@@ -192,26 +223,35 @@
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Align content in the center horizontally */
-  text-align: center; /* Align text in the center */
-  border-radius: 16px; /* Add border radius */
-  border: 1px solid #ccc; /* Add border for better visibility */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+  align-items: center;
+  /* Align content in the center horizontally */
+  text-align: center;
+  /* Align text in the center */
+  border-radius: 16px;
+  /* Add border radius */
+  border: 1px solid #ccc;
+  /* Add border for better visibility */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Add box shadow for depth */
 }
 
 .card-title {
   font-size: 24px;
-  margin-top: 20px; /* Adjust top margin */
+  margin-top: 20px;
+  /* Adjust top margin */
 }
 
 .card-text {
   font-size: 18px;
-  margin-bottom: 20px; /* Adjust bottom margin */
+  margin-bottom: 20px;
+  /* Adjust bottom margin */
 }
 
 .btn {
-  margin-bottom: 20px; /* Adjust bottom margin */
+  margin-bottom: 20px;
+  /* Adjust bottom margin */
 }
+
 /* Footer */
 .footer {
   background-color: #333;
