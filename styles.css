@@ -1,6 +1,7 @@
 /* Custom CSS */
 @import url('https://fonts.googleapis.com/css2?family=Lugrasimo&family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lugrasimo&family=Pacifico&family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lugrasimo&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Pacifico&family=Questrial&display=swap');
 
 .pacifico-regular {
   font-family: "Pacifico", cursive;
@@ -58,7 +59,7 @@ body::-webkit-scrollbar {
 }
 
 .pet-card {
-  background: url(media/petCardBg.jpeg);
+  background: url(media/petCardBg.png);
   border: 1px solid #dcdcdc;
   border-radius: 12px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -71,8 +72,10 @@ body::-webkit-scrollbar {
   height: auto;
   border-radius: 10px;
   margin-bottom: 10px;
-  display: block; /* Ensure the image is treated as a block element */
-  margin: 0 auto; /* Center the image horizontally */
+  display: block;
+  /* Ensure the image is treated as a block element */
+  margin: 0 auto;
+  /* Center the image horizontally */
 }
 
 
@@ -95,7 +98,7 @@ body::-webkit-scrollbar {
 }
 
 .pet-profile {
-  background: url(media/petCardBg.jpeg);
+  background: url(media/petCardBg.png);
   border: 1px solid #dcdcdc;
   border-radius: 12px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -112,7 +115,7 @@ body::-webkit-scrollbar {
 
 .pet-profile h2 {
   font-family: "Pacifico", cursive;
-  font-weight: 500;
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -171,7 +174,7 @@ body::-webkit-scrollbar {
 .carousel-item img {
   width: 100%;
   height: auto;
-  aspect-ratio: 6/4;
+  aspect-ratio: 4/3;
   border-radius: 16px;
 }
 
@@ -192,9 +195,13 @@ body::-webkit-scrollbar {
 }
 
 .introNote p {
-  font-family: "Questrial", sans-serif;
-  font-weight: 400;
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600; /* Choose the appropriate weight */
   font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
 }
 
 /* Responsive adjustments */
@@ -207,7 +214,7 @@ body::-webkit-scrollbar {
 
 @media (max-width: 767px) {
   .introNote p {
-    font-size: 1.5em;
+    font-size: 1em;
     /* Font size for smaller screens */
 
   }
