@@ -7,6 +7,7 @@
   font-weight: 400;
   font-style: normal;
 }
+
 .questrial-regular {
   font-family: "Questrial", sans-serif;
   font-weight: 400;
@@ -66,16 +67,21 @@ body::-webkit-scrollbar {
   transition: all 0.3s ease-in-out;
 }
 
+.pet-card img {
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: block; /* Ensure the image is treated as a block element */
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+
+
 .pet-card:hover {
   transform: translateY(-5px);
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.pet-card img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
 
 .pet-card h1 {
   font-family: "Pacifico", cursive;
@@ -203,15 +209,25 @@ body::-webkit-scrollbar {
   .introNote p {
     font-size: 1.5em;
     /* Font size for smaller screens */
+
+  }
+
+  .pet-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 6/4;
+    /* Set a specific aspect ratio, such as 16:9 */
+    border-radius: 10px;
+    /* Adjust border radius if needed */
   }
 }
 
 
-  .intro {
-    background: linear-gradient(to bottom, #808080, #ffffff);
-    /* Gradient from grey to white */
+.intro {
+  background: linear-gradient(to bottom, #808080, #ffffff);
+  /* Gradient from grey to white */
 
-  }
+}
 
 
 /* Cards Section */
