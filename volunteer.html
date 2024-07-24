@@ -7,14 +7,19 @@
     <title>Volunteer | Animal Adoption</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" type="png" href="media/tabIcon.png">
+    <link rel="stylesheet" href="style.css">
     <style>
         /* CSS styles here */
         body {
             font-family: "Nunito Sans", sans-serif;
             margin: 0;
             padding: 0;
-            background-color: bisque;
+            background: #f9d0c2;
             /* Set a light background color */
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
         }
 
         header {
@@ -96,7 +101,7 @@
         }
 
         .volunteer-form button {
-            background-color: #e39486;
+            background-color: #006a6a;
             color: #fff;
             border: none;
             cursor: pointer;
@@ -104,14 +109,15 @@
         }
 
         .volunteer-form button:hover {
-            background-color: #d3786d;
+            background-color: #00a2a2;
         }
 
         footer {
-            background-color: #f8d8cd;
+            background-color: #006a6a;
             padding: 10px;
+            color: #ccc;
             text-align: center;
-            border-top: 2px solid #e39486;
+            border-top: 2px solid #005454;
             /* Add a border to separate footer */
         }
 
@@ -147,29 +153,45 @@
         }
 
         /* Responsive styles */
+        @media (max-width: 1200px) {
+            .volunteer-form-container {
+                max-width: 50vw;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .volunteer-form-container {
+                max-width: 60vw;
+            }
+        }
+
         @media (max-width: 768px) {
             .volunteer-form-container {
+                max-width: 70vw;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .volunteer-form-container {
+                max-width: 80vw;
+            }
+
+            .paw-image {
+                height: auto;
+                width: 100%;
+                top: -70px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .volunteer-form-container {
                 max-width: 90vw;
-                /* Adjust maximum width for smaller screens */
             }
 
             .paw-image {
                 height: auto;
                 width: 100%;
                 top: -80px;
-
-            }
-        }
-
-        @media (max-width: 576px) {
-            .volunteer-form-container {
-                max-width: 90vw;
-                /* Adjust maximum width for even smaller screens */
-            }
-
-            .paw-image {
-                height: auto;
-                width: 100%;
             }
         }
     </style>
@@ -177,10 +199,10 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg" style="background-color: #006a6a;" data-bs-theme="dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img src="media/navIcon.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            <a class="navbar-brand" href="#">
+                <img src="media/navIcon.png" alt="Logo" width="28" height="auto" class="d-inline-block align-text-top">
                 PetPals
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -189,23 +211,35 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-4 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="contact.html">Contact us</a>
+                        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item dropdown" id="hoverDropdown">
-                        <a class="nav-link dropdown-toggle" href="volunteer.html" role="button" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle active" href="volunteer.html" role="button"
+                            aria-expanded="false">
                             How can you help us?
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="volunteer.html">Volunteer</a></li>
-                            <li><a class="dropdown-item" href="#">Donate</a></li>
-                            <li><a class="dropdown-item" href="#">Sponsor a Meal</a></li>
-                            <li><a class="dropdown-item" href="petCards.html">Adopt</a></li>
+                        <ul class="dropdown-menu" style="background-color: #006a6a; border: 2px solid black;">
+                            <li><a class="dropdown-item" style="border-bottom: 2px solid black;"
+                                    href="volunteer.html">Volunteer</a>
+                            </li>
+                            <li><a class="dropdown-item" style="border-bottom: 2px solid black;" href="#">Donate</a>
+                            </li>
+                            <li><a class="dropdown-item" style="border-bottm: 2px solid black;" href="#">Sponsor a
+                                    Meal</a></li>
+                            <li><a class="dropdown-item" style="border-top: 2px solid black;"
+                                    href="petCards.php">Adopt</a></li>
                         </ul>
+
                     </li>
                 </ul>
-                <a class="btn btn-outline-light" href="petCards.html">Furever Home</a>
+                <button class="btn btn-outline-light" onclick="goBack()">Back</button>
+                <script>
+                    function goBack() {
+                        window.history.back();
+                    }
+                </script>
             </div>
         </div>
     </nav>

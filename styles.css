@@ -1,29 +1,52 @@
-/* Custom CSS */
-@import url('https://fonts.googleapis.com/css2?family=Lugrasimo&family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lugrasimo&family=Pacifico&family=Questrial&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lugrasimo&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Pacifico&family=Questrial&display=swap');
+/* Import Google Fonts */
 
+/* Custom Font Styles */
 .pacifico-regular {
   font-family: "Pacifico", cursive;
   font-weight: 400;
   font-style: normal;
 }
 
-.questrial-regular {
-  font-family: "Questrial", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+/* Global Styles */
+html,body {
+  background: #f9d0c2;
+  font-family: "Quicksand", sans-serif !important;
+  font-weight: 500 !important;
+  padding: 0;
+  margin: 0;
+}
+/* Base line-height */
+body {
+  line-height: 1.4em; /* Base line-height */
 }
 
-/*--------------------PRELOADER STYLES--------------------*/
-body {
-  background-color: bisque;
+/* For smaller screens */
+@media (max-width: 600px) {
+  body {
+      line-height: 1.6em; /* Slightly larger line-height for readability on small screens */
+  }
 }
+
+/* For medium screens */
+@media (min-width: 600px) and (max-width: 1024px) {
+  body {
+      line-height: 1.5em; /* Adjust line-height for medium screens */
+  }
+}
+
+/* For larger screens */
+@media (min-width: 1024px) {
+  body {
+      line-height: 3em; /* Maintain or adjust line-height for large screens */
+  }
+}
+
 
 body::-webkit-scrollbar {
   display: none;
 }
 
+/* Preloader Styles */
 .preloader {
   background: linear-gradient(to right, #000000, #3b3b3b);
   position: absolute;
@@ -35,6 +58,10 @@ body::-webkit-scrollbar {
   justify-content: center;
   align-items: center;
   z-index: 9999;
+}
+
+.preloader.fade-out {
+  transition: opacity 2s ease-in-out;
 }
 
 .brand-logo {
@@ -54,12 +81,9 @@ body::-webkit-scrollbar {
   z-index: 9999;
 }
 
-.preloader.fade-out {
-  transition: opacity 2s ease-in-out;
-}
-
-
-.pet-profile {
+/* Pet Profile and Pet Card Styles */
+.pet-profile,
+.pet-card {
   background: url(media/petCardBg.png);
   border: 1px solid #dcdcdc;
   border-radius: 12px;
@@ -67,24 +91,39 @@ body::-webkit-scrollbar {
   padding: 20px;
   margin: 20px;
   transition: all 0.3s ease-in-out;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border: 2px solid black;
+}
+
+.pet-card img,
+.pet-profile img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  object-fit: cover;
 }
 
 .pet-profile img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  aspect-ratio: 4/3;
 }
 
-.pet-profile h2 {
-  font-family: "Pacifico", cursive;
-  font-weight: 600;
-  font-style: normal;
+.pet-card img {
+  aspect-ratio: 6/4;
 }
 
 
-.pet-profile p {
+.pet-profile p,
+.pet-card p,
+.card-text {
   margin-bottom: 5px;
   font-size: 18px;
+}
+
+.pet-card p {
+  font-size: 16px;
 }
 
 .pet-note {
@@ -92,28 +131,18 @@ body::-webkit-scrollbar {
   font-size: 20px;
 }
 
-.gallery-title {
-  text-align: center;
+.pet-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.gallery-image {
-  display: flex;
-  flex-direction: row;
-  margin: 10px auto;
-  max-width: 100%;
-  height: auto;
+/* Campaigns */
+.custom-carousel-img {
+  height: 90vh !important;
+  object-fit: cover;
 }
 
-/* Hide dropdown menu by default */
-.dropdown-menu {
-  display: none;
-}
-
-/* Show dropdown menu on hover */
-#hoverDropdown:hover .dropdown-menu {
-  display: block;
-}
-
+/* Gallery Styles */
 .gallery-title {
   text-align: center;
 }
@@ -124,80 +153,60 @@ body::-webkit-scrollbar {
   gap: 15px;
 }
 
-.gallery-image {
+.gallery-image,
+.carousel-item img {
   width: 100%;
-  height: 200px;
-  /* Set a fixed height for uniformity */
+  height: auto;
   object-fit: cover;
-  /* Maintain aspect ratio */
   border-radius: 16px;
 }
 
 .carousel-item img {
-  width: 100%;
-  height: auto;
   aspect-ratio: 4/3;
-  border-radius: 16px;
 }
 
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  display: none;
+}
+
+#hoverDropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Intro Section */
 .intro {
-  background: linear-gradient(to right, #b2b2b2, #ffffff);
-  /* Gradient from grey to white */
+  background: #f9d0c2;
   padding: 30px;
-  /* Optional: Add padding to create some space around the content */
 }
-
-
-
-
 
 .introNote {
   padding: 0 15px;
-  /* Adjust padding for better readability on mobile */
 }
 
-.introNote p {
-  font-family: "Nunito Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600; /* Choose the appropriate weight */
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100,
-    "YTLC" 500;
-}
-
-/* Responsive adjustments */
 @media (min-width: 768px) {
   .introNote p {
     font-size: 1.8em;
-    /* Font size for larger screens */
   }
 }
 
 @media (max-width: 767px) {
   .introNote p {
     font-size: 1em;
-    /* Font size for smaller screens */
-
   }
 
   .pet-card img {
     width: 100%;
     height: auto;
     aspect-ratio: 6/4;
-    /* Set a specific aspect ratio, such as 16:9 */
     border-radius: 10px;
-    /* Adjust border radius if needed */
+  }
+
+  .custom-carousel-img {
+    height: 50vh !important;
+    object-fit: cover;
   }
 }
-
-
-.intro {
-  background: linear-gradient(to bottom, #808080, #ffffff);
-  /* Gradient from grey to white */
-
-}
-
 
 /* Cards Section */
 .cards-section {
@@ -209,76 +218,186 @@ body::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* Align content in the center horizontally */
   text-align: center;
-  /* Align text in the center */
   border-radius: 16px;
-  /* Add border radius */
   border: 1px solid #ccc;
-  /* Add border for better visibility */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Add box shadow for depth */
 }
 
 .card-title {
   font-size: 24px;
   margin-top: 20px;
-  /* Adjust top margin */
-}
-
-.card-text {
-  font-size: 18px;
-  margin-bottom: 20px;
-  /* Adjust bottom margin */
-}
-
-.btn {
-  margin-bottom: 20px;
-  /* Adjust bottom margin */
 }
 
 /* Footer */
 .footer {
-  background-color: #333;
+  background-color: #006a6a !important;
   color: #fff;
   padding: 20px 0;
 }
-.pet-card {
-  background: url(media/petCardBg.png);
-  border: 1px solid #dcdcdc;
-  border-radius: 12px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 20px;
-  transition: all 0.3s ease-in-out;
+
+.footer ul {
+  padding: 0;
+  list-style: none;
 }
 
-.pet-card img {
-  max-width: 100%;
-  /* Ensure the image does not exceed its container */
-  height: auto;
-  /* Maintain aspect ratio */
+.footer ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.footer ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .pet-profile,
+  .pet-card {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 992px) {
+  .pet-profile,
+  .pet-card {
+    max-width: 200px;
+  }
+
+  .custom-carousel-img {
+    height: 60vh !important;
+    object-fit: contain !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .pet-profile,
+  .pet-card {
+    max-width: 100vw;
+    margin-right: 10px;
+  }
+
+  .custom-carousel-img {
+    height: 50vh !important;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 576px) {
+  .pet-profile,
+  .pet-card {
+    max-width: 100vw;
+    margin: auto;
+  }
+
+  .custom-carousel-img {
+    height: 50vh !important;
+    object-fit: contain;
+  }
+}
+
+.container h5 {
+  font-size: calc(1.5em + 1vw); /* Responsive font size */
+  text-align: center;
+  margin: 30px;
+  color: #343a40;
+}
+
+.accordion-button {
+  background-color: #006a6a;
+  color: white;
+  font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #0000007e;
+  background-color: #e9ecef;
+}
+
+.accordion-body {
+  background-color: #ffffff;
+  color: #343a40;
+}
+
+.accordion-item {
+  border: none;
+}
+
+/* New Styles Added */
+
+/* Hero Section Styles */
+.hero-section {
+  background: url('media/hero-bg.jpg') no-repeat center center/cover;
+  color: #fff;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-section .btn-primary {
+  background-color: #ff6f61;
+  border: none;
+}
+
+/* Featured Pets Styles */
+.featured-pets {
+  padding: 50px 0;
+  background-color: #ffffff;
+}
+
+.featured-pets .card {
+  border: none;
   border-radius: 10px;
-  margin-bottom: 10px;
-  display: block;
-  /* Ensure the image is treated as a block element */
-  margin: 0 auto;
-  /* Center the image horizontally */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-
-.pet-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+.featured-pets .card img {
+  border-bottom: 3px solid #ff6f61;
 }
 
-.pet-card h1 {
-  font-family: "Pacifico", cursive;
-  font-weight: 400;
-  font-style: normal;
+/* Testimonials Section Styles */
+.testimonials {
+  background-color: #fff;
+  padding: 50px 0;
 }
 
-.pet-card p {
-  margin-bottom: 5px;
-  font-size: 16px;
+.testimonials h2 {
+  margin-bottom: 30px;
+}
+
+.testimonials blockquote {
+  font-style: italic;
+}
+
+.blockquote-footer {
+  margin-top: 5px;
+}
+
+.testimonials footer {
+  font-weight: bold;
+}
+
+/* Newsletter Signup Styles */
+.newsletter {
+  background-color: #f7f7f7;
+  padding: 50px 0;
+}
+
+.newsletter form .form-control {
+  border-radius: 30px;
 }
