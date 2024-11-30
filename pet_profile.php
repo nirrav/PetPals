@@ -64,13 +64,13 @@ if (isset($_GET['id'])) {
                         <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item dropdown" id="hoverDropdown">
-                        <a class="nav-link dropdown-toggle active" href="volunteer.html" role="button"
+                        <a class="nav-link dropdown-toggle active" href="volunteer.php" role="button"
                             aria-expanded="false">
                             How can you help us?
                         </a>
                         <ul class="dropdown-menu" style="background-color: #006a6a; border: 2px solid black;">
                             <li><a class="dropdown-item" style="border-bottom: 2px solid black;"
-                                    href="volunteer.html">Volunteer</a>
+                                    href="volunteer.php">Volunteer</a>
                             </li>
                             <li><a class="dropdown-item" style="border-bottom: 2px solid black;" href="#">Donate</a>
                             </li>
@@ -111,6 +111,16 @@ if (isset($_GET['id'])) {
                     <h2>Note About <?php echo htmlspecialchars($row["name"] ?? '', ENT_QUOTES, 'UTF-8'); ?>:</h2>
                     <p><?php echo htmlspecialchars($row["note"] ?? '', ENT_QUOTES, 'UTF-8'); ?></p>
                 </div>
+            </div>
+
+        </div>
+
+        <!-- Add the "Adopt [Name]" button just above the photo album -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <a href="adopt_pet.php?id=<?php echo $pet_id; ?>" class="btn btn-primary mb-4">
+                    Adopt <?php echo htmlspecialchars($row["name"] ?? '', ENT_QUOTES, 'UTF-8'); ?>
+                </a>
             </div>
         </div>
         <div class="row mt-4">

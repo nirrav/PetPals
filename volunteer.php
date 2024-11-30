@@ -1,3 +1,49 @@
+<?php
+// Include the database connection
+include './config.php';  // Ensure this path is correct
+
+// Define the message variable
+$message = '';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get form data and sanitize it
+    $name = $conn->real_escape_string(trim($_POST['name']));
+    $email = $conn->real_escape_string(trim($_POST['email']));
+    $messageText = $conn->real_escape_string(trim($_POST['message']));
+
+    // Validate the data (you can add more validation if needed)
+    if (empty($name) || empty($email) || empty($messageText)) {
+        $message = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        Please fill in all fields.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>';
+    } else {
+        // Insert data into the database
+        $sql = "INSERT INTO appliedvolunteers (name, email, message) VALUES ('$name', '$email', '$messageText')";
+
+        if ($conn->query($sql) === TRUE) {
+            // Success message with an icon and animation
+            $message = '<div class="alert alert-success alert-dismissible fade show success-message" role="alert">
+                            <i class="bi bi-check-circle-fill me-2"></i> 
+                            <strong>Thank you for volunteering!</strong> We will get in touch with you soon.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>';
+        } else {
+            // Error message
+            $message = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            Error: ' . $conn->error . '
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>';
+        }
+    }
+}
+
+// Close the connection
+$conn->close();
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -194,6 +240,35 @@
                 top: -80px;
             }
         }
+
+        /* Additional styles for the success message */
+        .success-message {
+            animation: fadeIn 1s ease-in-out;
+            border-radius: 8px;
+            padding: 20px;
+            font-size: 16px;
+            color: #155724;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+        }
+
+        .success-message i {
+            font-size: 1.5rem;
+            color: #28a745;
+            /* Green color for success icon */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 
 </head>
@@ -216,13 +291,13 @@
                         <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item dropdown" id="hoverDropdown">
-                        <a class="nav-link dropdown-toggle active" href="volunteer.html" role="button"
+                        <a class="nav-link dropdown-toggle active" href="volunteer.php" role="button"
                             aria-expanded="false">
                             How can you help us?
                         </a>
                         <ul class="dropdown-menu" style="background-color: #006a6a; border: 2px solid black;">
                             <li><a class="dropdown-item" style="border-bottom: 2px solid black;"
-                                    href="volunteer.html">Volunteer</a>
+                                    href="volunteer.php">Volunteer</a>
                             </li>
                             <li><a class="dropdown-item" style="border-bottom: 2px solid black;" href="#">Donate</a>
                             </li>
@@ -247,7 +322,11 @@
         <h1>Volunteer to Help Animals</h1>
     </header>
 
-    <main>
+    <main class="container my-5">
+        <!-- Display message if available -->
+        <?php if ($message)
+            echo $message; ?>
+
         <section class="volunteer-info">
             <h2>Why Volunteer?</h2>
             <p><b>Volunteering with us is a rewarding experience. You can make a real difference in the lives of animals
@@ -255,15 +334,13 @@
                     need.</b></p>
         </section>
 
-        <!-- Container for the form and the paw image -->
+        <!-- Volunteer form section -->
         <div class="volunteer-form-container">
-            <!-- Paw image -->
             <img src="media/section1bg-removebg-preview.png" alt="Volunteer" class="paw-image">
-
-            <!-- Volunteer form -->
             <section class="volunteer-form">
                 <h2>Volunteer Sign-up</h2>
-                <form id="volunteerForm">
+
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" id="volunteerForm">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
 
@@ -284,47 +361,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // JavaScript code here
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('volunteerForm');
 
-            form.addEventListener('submit', function (event) {
-                event.preventDefault();
-
-                // You can add your code here to handle form submission, such as sending data to a server
-                // For now, let's just log the form data
-                const formData = new FormData(form);
-                for (let [key, value] of formData.entries()) {
-                    console.log(`${key}: ${value}`);
-                }
-
-                // Reset the form after submission
-                form.reset();
-            });
-        });
-        // Toggle dropdown menu when dropdown toggle button is clicked
-        document.querySelector('#hoverDropdown .dropdown-toggle').addEventListener('click', function (e) {
-            e.preventDefault(); // Prevent default link behavior
-            var dropdownMenu = document.querySelector('#hoverDropdown .dropdown-menu');
-            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-        });
-
-        // Close dropdown menu when clicking outside of it
-        document.addEventListener('click', function (e) {
-            var dropdownMenu = document.querySelector('#hoverDropdown .dropdown-menu');
-            if (!e.target.closest('#hoverDropdown') && dropdownMenu.style.display === 'block') {
-                dropdownMenu.style.display = 'none';
-            }
-        });
-
-        // Prevent dropdown menu from closing when clicking on it
-        document.querySelector('#hoverDropdown .dropdown-menu').addEventListener('click', function (e) {
-            e.stopPropagation();
-        });
-
-
-    </script>
 </body>
 
 </html>

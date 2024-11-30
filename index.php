@@ -40,8 +40,7 @@ $conn->close();
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg" style="background-color: #006a6a;"
-    data-bs-theme="dark">
+  <nav class="navbar navbar-expand-lg" style="background-color: #006a6a;" data-bs-theme="dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
         <img src="media/navIcon.png" alt="Logo" width="28" height="auto" class="d-inline-block align-text-top">
@@ -57,11 +56,11 @@ $conn->close();
             <a class="nav-link active" aria-current="page" href="contact.html">Contact us</a>
           </li>
           <li class="nav-item dropdown" id="hoverDropdown">
-            <a class="nav-link dropdown-toggle active" href="volunteer.html" role="button" aria-expanded="false">
+            <a class="nav-link dropdown-toggle active" href="volunteer.php" role="button" aria-expanded="false">
               How can you help us?
             </a>
             <ul class="dropdown-menu" style="background-color: #006a6a; border: 2px solid black;">
-              <li><a class="dropdown-item" style="border-bottom: 2px solid black;" href="volunteer.html">Volunteer</a>
+              <li><a class="dropdown-item" style="border-bottom: 2px solid black;" href="volunteer.php">Volunteer</a>
               </li>
               <li><a class="dropdown-item" style="border-bottom: 2px solid black;" href="#">Donate</a></li>
               <li><a class="dropdown-item" style="border-bottm: 2px solid black;" href="#">Sponsor a Meal</a></li>
@@ -123,7 +122,8 @@ $conn->close();
       </div>
       <!-- Right side with note or text -->
       <div class="introNote col-md-6">
-        <p><b><u>Welcome to PetPals, your compassionate companion in animal adoption.</u></b> Our platform is dedicated to
+        <p><b><u>Welcome to PetPals, your compassionate companion in animal adoption.</u></b> Our platform is dedicated
+          to
           connecting loving homes with animals in need of care and shelter. With a mission to promote responsible pet
           ownership and reduce animal homelessness, we provide a seamless experience for both prospective adopters and
           rescue organizations. Start your journey with PetPals today and embark on a rewarding adventure of
@@ -305,7 +305,7 @@ $conn->close();
             <div class="card-body">
               <h5 class="card-title">Volunteer</h5>
               <p class="card-text">Join us as a volunteer and make a difference.</p>
-              <a href="volunteer.html" class="btn " style="background-color: #006a6a; color: aliceblue;">Volunteer</a>
+              <a href="volunteer.php" class="btn " style="background-color: #006a6a; color: aliceblue;">Volunteer</a>
             </div>
           </div>
         </div>
