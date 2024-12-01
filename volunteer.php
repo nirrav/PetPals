@@ -299,7 +299,8 @@ $conn->close();
                             <li><a class="dropdown-item" style="border-bottom: 2px solid black;"
                                     href="volunteer.php">Volunteer</a>
                             </li>
-                            <li><a class="dropdown-item" style="border-bottom: 2px solid black;" href="#">Donate</a>
+                            <li><a class="dropdown-item" style="border-bottom: 2px solid black;"
+                                    href="./donate.php">Donate</a>
                             </li>
                             <li><a class="dropdown-item" style="border-bottm: 2px solid black;" href="#">Sponsor a
                                     Meal</a></li>

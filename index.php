@@ -62,7 +62,7 @@ $conn->close();
             <ul class="dropdown-menu" style="background-color: #006a6a; border: 2px solid black;">
               <li><a class="dropdown-item" style="border-bottom: 2px solid black;" href="volunteer.php">Volunteer</a>
               </li>
-              <li><a class="dropdown-item" style="border-bottom: 2px solid black;" href="#">Donate</a></li>
+              <li><a class="dropdown-item" style="border-bottom: 2px solid black;" href="./donate.php">Donate</a></li>
               <li><a class="dropdown-item" style="border-bottm: 2px solid black;" href="#">Sponsor a Meal</a></li>
               <li><a class="dropdown-item" style="border-top: 2px solid black;" href="petCards.php">Adopt</a></li>
             </ul>
@@ -296,7 +296,7 @@ $conn->close();
             <div class="card-body">
               <h5 class="card-title">Donate</h5>
               <p class="card-text">Support our cause by making a donation.</p>
-              <a href="donate.html" class="btn " style="background-color: #006a6a; color: aliceblue;">Donate Now</a>
+              <a href="./donate.php" class="btn " style="background-color: #006a6a; color: aliceblue;">Donate Now</a>
             </div>
           </div>
         </div>
