@@ -8,6 +8,7 @@ $sql = "SELECT name, photo, id FROM animal_adoption ORDER BY age DESC LIMIT 3";
 $result = $conn->query($sql);
 
 $featuredPets = [];
+$pet_id;
 
 if ($result->num_rows > 0) {
   // Fetch all results into an array
@@ -63,7 +64,7 @@ $conn->close();
               <li><a class="dropdown-item" style="border-bottom: 2px solid black;" href="volunteer.php">Volunteer</a>
               </li>
               <li><a class="dropdown-item" style="border-bottom: 2px solid black;" href="./donate.php">Donate</a></li>
-              <li><a class="dropdown-item" style="border-bottm: 2px solid black;" href="#">Sponsor a Meal</a></li>
+              <li><a class="dropdown-item" style="border-bottm: 2px solid black;" href="./sponsor_meal.php">Sponsor a Meal</a></li>
               <li><a class="dropdown-item" style="border-top: 2px solid black;" href="petCards.php">Adopt</a></li>
             </ul>
 
@@ -146,8 +147,11 @@ $conn->close();
                 <h1 class="card-title">
                   <?php echo $pet['name']; ?>
                 </h1>
-                <a href="contact.html" class="btn" style="background-color: #006a6a; color: aliceblue;">Adopt
+                <a href="adopt_pet.php?id=<?php echo $pet['id']; ?>" class="btn"
+                  style="background-color: #006a6a; color: aliceblue;">Adopt
                   <?php echo $pet['name']; ?>
+                </a>
+
                 </a>
               </div>
             </div>

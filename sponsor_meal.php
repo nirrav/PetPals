@@ -43,7 +43,7 @@
         </p>
 
         <div class="text-center">
-            <img src="media/meal.jpg" alt="Sponsor a Meal" class="img-fluid rounded shadow-lg mb-4"
+            <img src="media/tabIcon.png" alt="Sponsor a Meal" class="img-fluid rounded shadow-lg mb-4"
                 style="max-height: 300px;">
         </div>
 

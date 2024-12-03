@@ -274,7 +274,7 @@ $conn->close();
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg" style="background-color: #006a6a;" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #006a6a;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="media/navIcon.png" alt="Logo" width="28" height="auto" class="d-inline-block align-text-top">
@@ -287,27 +287,19 @@ $conn->close();
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-                    </li>
-                    <li class="nav-item dropdown" id="hoverDropdown">
-                        <a class="nav-link dropdown-toggle active" href="volunteer.php" role="button"
-                            aria-expanded="false">
+                    <li class="nav-item"><a class="nav-link active" href="index.php">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             How can you help us?
                         </a>
-                        <ul class="dropdown-menu" style="background-color: #006a6a; border: 2px solid black;">
-                            <li><a class="dropdown-item" style="border-bottom: 2px solid black;"
-                                    href="volunteer.php">Volunteer</a>
-                            </li>
-                            <li><a class="dropdown-item" style="border-bottom: 2px solid black;"
-                                    href="./donate.php">Donate</a>
-                            </li>
-                            <li><a class="dropdown-item" style="border-bottm: 2px solid black;" href="#">Sponsor a
-                                    Meal</a></li>
-                            <li><a class="dropdown-item" style="border-top: 2px solid black;"
-                                    href="petCards.php">Adopt</a></li>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown"
+                            style="background-color: #f9d0c2; border: 2px solid black;">
+                            <li><a class="dropdown-item" href="volunteer.php">Volunteer</a></li>
+                            <li><a class="dropdown-item" href="./donate.php">Donate</a></li>
+                            <li><a class="dropdown-item" href="./sponsor_meal.php">Sponsor a Meal</a></li>
+                            <li><a class="dropdown-item" href="petCards.php">Adopt</a></li>
                         </ul>
-
                     </li>
                 </ul>
                 <button class="btn btn-outline-light" onclick="goBack()">Back</button>
