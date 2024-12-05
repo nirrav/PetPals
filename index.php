@@ -57,11 +57,11 @@ $conn->close();
             <a class="nav-link active" aria-current="page" href="contact.html">Contact us</a>
           </li>
           <li class="nav-item dropdown" id="hoverDropdown">
-            <a class="nav-link dropdown-toggle active" href="volunteer.php" role="button" aria-expanded="false">
+            <a class="nav-link dropdown-toggle active" href="volDetail.php" role="button" aria-expanded="false">
               How can you help us?
             </a>
             <ul class="dropdown-menu" style="background-color: #006a6a; border: 2px solid black;">
-              <li><a class="dropdown-item" style="border-bottom: 2px solid black;" href="volunteer.php">Volunteer</a>
+              <li><a class="dropdown-item" style="border-bottom: 2px solid black;" href="volDetail.php">Volunteer</a>
               </li>
               <li><a class="dropdown-item" style="border-bottom: 2px solid black;" href="./donate.php">Donate</a></li>
               <li><a class="dropdown-item" style="border-bottm: 2px solid black;" href="./sponsor_meal.php">Sponsor a
@@ -310,7 +310,7 @@ $conn->close();
             <div class="card-body">
               <h5 class="card-title">Volunteer</h5>
               <p class="card-text">Join us as a volunteer and make a difference.</p>
-              <a href="volunteer.php" class="btn " style="background-color: #006a6a; color: aliceblue;">Volunteer</a>
+              <a href="volDetail.php" class="btn " style="background-color: #006a6a; color: aliceblue;">Volunteer</a>
             </div>
           </div>
         </div>

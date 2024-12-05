@@ -104,17 +104,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item dropdown" id="hoverDropdown">
-                        <a class="nav-link dropdown-toggle active" href="" role="button"
-                            aria-expanded="false">
+                        <a class="nav-link dropdown-toggle active" href="" role="button" aria-expanded="false">
                             How can you help us?
                         </a>
                         <ul class="dropdown-menu" style="background-color: #006a6a; border: 2px solid black;">
                             <li><a class="dropdown-item" style="border-bottom: 2px solid black;"
-                                    href="volunteer.php">Volunteer</a>
+                                    href="volDetail.php">Volunteer</a>
                             </li>
-                            <li><a class="dropdown-item" style="border-bottom: 2px solid black;" href="./donate.php">Donate</a>
+                            <li><a class="dropdown-item" style="border-bottom: 2px solid black;"
+                                    href="./donate.php">Donate</a>
                             </li>
-                            <li><a class="dropdown-item" style="border-bottom: 2px solid black;" href="./sponsor_meal.php">Sponsor a
+                            <li><a class="dropdown-item" style="border-bottom: 2px solid black;"
+                                    href="./sponsor_meal.php">Sponsor a
                                     Meal</a></li>
                             <li>
                                 <button class="dropdown-item" style="border-top: 2px solid black;"

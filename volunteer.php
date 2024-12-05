@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>';
 
-            header("Location: volDetail.php");
+            header("Location: index.php");
 
         } else {
             // Error message

@@ -68,7 +68,7 @@ if (isset($_GET['id'])) {
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown"
                             style="background-color: #f9d0c2; border: 2px solid black;">
-                            <li><a class="dropdown-item" href="volunteer.php">Volunteer</a></li>
+                            <li><a class="dropdown-item" href="volDetail.php">Volunteer</a></li>
                             <li><a class="dropdown-item" href="./donate.php">Donate</a></li>
                             <li><a class="dropdown-item" href="./sponsor_meal.php">Sponsor a Meal</a></li>
                             <li><a class="dropdown-item" href="petCards.php">Adopt</a></li>
