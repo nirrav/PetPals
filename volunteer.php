@@ -28,6 +28,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <strong>Thank you for volunteering!</strong> We will get in touch with you soon.
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>';
+
+            header("Location: volDetail.php");
+
         } else {
             // Error message
             $message = '<div class="alert alert-danger alert-dismissible fade show" role="alert">

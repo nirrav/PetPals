@@ -41,7 +41,7 @@ $conn->close();
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg" style="background-color: #006a6a;" data-bs-theme="dark">
+  <nav class="navbar navbar-expand-lg" style="background-color: #006A6AFF;" data-bs-theme="dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
         <img src="media/navIcon.png" alt="Logo" width="28" height="auto" class="d-inline-block align-text-top">
@@ -64,7 +64,8 @@ $conn->close();
               <li><a class="dropdown-item" style="border-bottom: 2px solid black;" href="volunteer.php">Volunteer</a>
               </li>
               <li><a class="dropdown-item" style="border-bottom: 2px solid black;" href="./donate.php">Donate</a></li>
-              <li><a class="dropdown-item" style="border-bottm: 2px solid black;" href="./sponsor_meal.php">Sponsor a Meal</a></li>
+              <li><a class="dropdown-item" style="border-bottm: 2px solid black;" href="./sponsor_meal.php">Sponsor a
+                  Meal</a></li>
               <li><a class="dropdown-item" style="border-top: 2px solid black;" href="petCards.php">Adopt</a></li>
             </ul>
 
